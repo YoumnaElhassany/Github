@@ -10,7 +10,7 @@ public class SignInPage extends BasePage {
 
     @FindBy(xpath = "//h1[text()='Sign in to GitHub']")
     public WebElement loginHeadline;
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/div[2]/a[1]")
+    @FindBy(xpath = "//a[contains(@href, '/login')]")
     private WebElement loginBtn;
 
     public SignInPage(WebDriver driver) {

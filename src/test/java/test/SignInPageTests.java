@@ -7,7 +7,7 @@ import pages.SignInPage;
 public class SignInPageTests extends BaseTest {
 
     @Test
-    public void clickOnSignInBtn() {
+    public void assertOnLoginPageHeadline() {
         SignInPage signIn = new SignInPage(driver);
         signIn.clickOnLoginBtn();
 
