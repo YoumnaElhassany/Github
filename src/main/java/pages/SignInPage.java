@@ -12,6 +12,14 @@ public class SignInPage extends BasePage {
     public WebElement loginHeadline;
     @FindBy(xpath = "//a[contains(@href, '/login')]")
     private WebElement loginBtn;
+    @FindBy(xpath = "//*[@id=\"js-flash-container\"]/div/div")
+    public WebElement incorrectToasterTxt;
+    @FindBy(id = "login_field")
+    private WebElement usrLoginField;
+    @FindBy(id = "password")
+    private WebElement usrPasswordField;
+    @FindBy(name = "commit")
+    private WebElement signInBtn;
 
     public SignInPage(WebDriver driver) {
         super(driver);
@@ -20,5 +28,11 @@ public class SignInPage extends BasePage {
 
     public void clickOnLoginBtn() {
         loginBtn.click();
+    }
+
+    public void sendSignInData(String usrName, String passWord) {
+        usrLoginField.sendKeys(usrName);
+        usrPasswordField.sendKeys(passWord);
+        signInBtn.click();
     }
 }
