@@ -1,0 +1,9 @@
+<suite name="Suite1" verbose="1">
+    <test name="test">
+        <classes>
+            <class name="test.MainPageTests"/>
+            <class name="test.SignInPageTests"/>
+        </classes>
+    </test>
+
+</suite>
