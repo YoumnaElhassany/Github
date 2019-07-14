@@ -20,6 +20,13 @@ public class SignInPageTests extends BaseTest {
                 {" ", "testTest.123@1"}};
     }
 
+    @DataProvider
+    private Object[][] validCredentials() {
+        return new Object[][]{
+                //correct email and password
+                {"example@gmail.com", "password"}};
+    }
+
     @Test
     public void assertOnLoginPageHeadline() {
         SignInPage signInPage = new SignInPage(driver);
@@ -35,6 +42,16 @@ public class SignInPageTests extends BaseTest {
         signInPage.sendSignInData(usrName, passWord);
 
         Assert.assertEquals(signInPage.incorrectToasterTxt.getText(), "Incorrect username or password.");
+    }
+
+    @Test(dataProvider = "validCredentials")
+    public void validLogin(String usrName, String passWord) {
+        SignInPage signInPage = new SignInPage(driver);
+        signInPage.clickOnLoginBtn();
+        signInPage.sendSignInData(usrName, passWord);
+
+        //assert on username
+        Assert.assertEquals(signInPage.usrNameDropDownList.getText(), "UserName");
     }
 }
 

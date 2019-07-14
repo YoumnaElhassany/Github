@@ -20,6 +20,8 @@ public class SignInPage extends BasePage {
     private WebElement usrPasswordField;
     @FindBy(name = "commit")
     private WebElement signInBtn;
+    @FindBy(xpath = "//*[@id=\"account-switcher-left\"]/summary/span")
+    public WebElement usrNameDropDownList;
 
     public SignInPage(WebDriver driver) {
         super(driver);
