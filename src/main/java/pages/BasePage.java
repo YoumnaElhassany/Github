@@ -8,6 +8,7 @@ public class BasePage {
     public WebDriverWait wait;
 
     public BasePage(WebDriver driver) {
+        // Testing PR
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
     }
